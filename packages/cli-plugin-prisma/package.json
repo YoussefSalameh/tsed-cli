@@ -24,6 +24,5 @@
   "devDependencies": {
     "@tsed/cli": "3.21.0",
     "@tsed/cli-core": "3.21.0"
-  },
-  "peerDependencies": {}
+  }
 }

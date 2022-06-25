@@ -80,6 +80,7 @@
   },
   "peerDependencies": {
     "@tsed/core": ">=6.95.1",
-    "@tsed/di": ">=6.95.1"
+    "@tsed/di": ">=6.95.1",
+    "@tsed/schema": ">=6.95.1"
   }
 }

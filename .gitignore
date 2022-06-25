@@ -54,3 +54,11 @@ test/*.js.map
 .DS_Store
 .nyc_output
 /docs/.vuepress/dist/
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

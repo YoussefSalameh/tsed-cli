@@ -7,7 +7,7 @@
   "scripts": {
     "configure": "monorepo ci configure",
     "clean": "monorepo clean workspace",
-    "test": "yarn test:lint && yarn test:coverage",
+    "test": "yarn clean && yarn test:lint && yarn test:coverage",
     "test:unit": "cross-env NODE_ENV=test jest",
     "test:coverage": "yarn test:unit",
     "test:lint": "eslint packages --ext .ts",
@@ -49,9 +49,11 @@
     "@tsed/core": ">=6.114.14",
     "@tsed/di": ">=6.114.14",
     "@tsed/logger": ">=6.0.1",
+    "@tsed/schema": ">=6.114.14",
     "any-observable": "0.5.1",
     "axios": "0.26.1",
     "chalk": "4.1.0",
+    "change-case": "4.1.2",
     "commander": "9.3.0",
     "consolidate": "0.16.0",
     "execa": "5.1.1",
@@ -79,8 +81,11 @@
     "@tsed/markdown-it-symbols": "^3.20.4",
     "@tsed/monorepo-utils": "^1.21.0",
     "@tsed/ts-doc": "^4.1.0",
+    "@types/fs-extra": "^9.0.13",
     "@types/jest": "27.4.1",
     "@types/node": "17.0.21",
+    "@types/normalize-path": "^3.0.0",
+    "@types/semver": "^7.3.10",
     "@typescript-eslint/eslint-plugin": "5.15.0",
     "@typescript-eslint/parser": "5.15.0",
     "concurrently": "6.0.0",
@@ -91,6 +96,7 @@
     "eslint-plugin-jest": "24.2.1",
     "eslint-plugin-mocha": "8.1.0",
     "eslint-plugin-prettier": "4.0.0",
+    "filedirname": "2.7.0",
     "gflow": "^5.1.2",
     "husky": "^8.0.1",
     "is-ci": "3.0.1",
@@ -117,9 +123,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "read-pkg-up"
     ]
   },
   "monorepo": {
@@ -134,5 +137,6 @@
         "cname": "cli.tsed.io"
       }
     ]
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }
