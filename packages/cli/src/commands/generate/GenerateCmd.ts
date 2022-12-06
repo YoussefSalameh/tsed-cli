@@ -112,6 +112,7 @@ export class GenerateCmd implements CommandProvider {
       initialOptions.name || pascalCase(state.name || initialOptions.name || state.type || initialOptions.type);
 
     const proposedProviders = this.providersList.findProviders(initialOptions.type);
+    const controllersDirectories = this.getDirectories("controllers");
 
     return [
       {
@@ -165,9 +166,9 @@ export class GenerateCmd implements CommandProvider {
         name: "directory",
         message: "Which directory?",
         when(state: any) {
-          return ["controller"].includes(state.type || initialOptions.type) || initialOptions.directory;
+          return controllersDirectories.length && (["controller"].includes(state.type || initialOptions.type) || initialOptions.directory);
         },
-        choices: this.getDirectories("controllers")
+        choices: controllersDirectories
       },
       {
         type: "autocomplete",
